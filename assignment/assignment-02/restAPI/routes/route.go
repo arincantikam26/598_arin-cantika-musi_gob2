@@ -14,6 +14,7 @@ func StartServer() *gin.Engine {
 	routes := gin.Default()
 
 	routes.POST("/orders", inDB.CreateOrders)
+	routes.POST("/orders/:customer_name", inDB.CreateOrdersbyParam)
 	routes.GET("/orders", inDB.GetOrders)
 
 	routes.PUT("/orders/:orderId", inDB.UpdateOrder)

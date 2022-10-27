@@ -252,3 +252,28 @@ func (idb *InDB) DeleteOrder(c *gin.Context) {
 		}
 	}
 }
+
+func (db *InDB) CreateOrdersbyParam(c *gin.Context) {
+	var (
+		order  models.Order
+		result gin.H
+	)
+
+	customerName := c.Param("customer_name")
+
+	order.CustomerName = customerName
+
+	err := db.DB.Create(&order).Error
+	if err != nil {
+		result = gin.H{
+			"result": "Create Data Failed!",
+		}
+		c.JSON(http.StatusNoContent, result)
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+
+		"customer_name": order.CustomerName,
+	})
+
+}
