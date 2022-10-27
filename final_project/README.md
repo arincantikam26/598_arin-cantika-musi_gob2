@@ -6,9 +6,9 @@ nama lengkap    : Arin Cantika Musi
 ```
 
 # Panduan Aplikasi
-1. Clone atau download folder assignment-03
+1. Clone atau download folder final_project
 2. Buka terminal
-3. Pada terminal masuk ke folder assigntment-02
+3. Pada terminal masuk ke folder MyGram
 ```
 cd final_project/MyGram
 ```
